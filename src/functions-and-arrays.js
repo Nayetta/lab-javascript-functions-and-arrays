@@ -81,7 +81,19 @@ console.log(`El resultat de la suma és ` + sum(mixedArr));
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(average) {
+  let avg = 0;
+
+  for (var avgNum = 0; avgNum < average.length; avgNum++) {
+    avg += average[avgNum];
+  }
+
+  avg /= average.length;
+  //console.log(avg);
+  return avg;
+}
+
+console.log(`El resultat de la suma és ` + averageNumbers(numbersAvg));
 
 // Level 2: Array of strings
 const wordsArr = [
@@ -97,10 +109,43 @@ const wordsArr = [
   "palace",
 ];
 
-function averageWordLength() {}
+function averageWordLength(average) {
+  let avg = 0;
+
+  for (var avgNum = 0; avgNum < average.length; avgNum++) {
+    average[avgNum];
+    avg += average[avgNum].length;
+  }
+
+  avg /= average.length;
+  return avg;
+}
+console.log(`El resultat de la suma és ` + averageWordLength(wordsArr));
 
 // Bonus - Iteration #4.1
-function avg() {}
+// function avg(average) {
+//   let avgVar = 0;
+
+//   for (var avgNum = 0; avgNum < average.length; avgNum++) {
+//     if (typeof average[avgNum] == "number") {
+//       avgVar += average[avgNum];
+//     } else if (typeof average[avgNum] == "string") {
+//       avgVar += average[avgNum].length;
+//     } else if (typeof average[avgNum] == "boolean") {
+//       if (average[avgNum] === true) {
+//         avgVar += 1;
+//       } else {
+//         continue;
+//       }
+//     } else {
+//       return `there is a mistake`;
+//     }
+//   }
+
+//   avgVar /= average.length;
+//   return avgVar;
+// }
+// console.log(`El resultat de la suma és ` + averageWordLength(mixedArr));
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
