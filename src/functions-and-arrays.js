@@ -188,15 +188,16 @@ const wordsFind = [
 ];
 
 function doesWordExist(wordList, daWord) {
-  for (let indexWord = 0; indexWord < wordList.length; indexWord++) {
-    if (daWord === wordList[indexWord]) {
+    if (daWord === wordList.includes) {
       return true;
-      break;
+      
+    }else{
+      continue;
     }
   }
-}
+
 let theWord = "aeting";
-//console.log(`${theWord} exist in the array list ` doesWordExist(wordsFind, theWord));
+doesWordExist(wordsFind, theWord);
 
 // Iteration #7: Count repetition
 const wordsCount = [
