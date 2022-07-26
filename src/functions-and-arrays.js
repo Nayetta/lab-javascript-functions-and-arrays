@@ -123,29 +123,29 @@ function averageWordLength(average) {
 console.log(`El resultat de la suma és ` + averageWordLength(wordsArr));
 
 // Bonus - Iteration #4.1
-// function avg(average) {
-//   let avgVar = 0;
+function avg(nums) {
+  let suma = 0;
 
-//   for (var avgNum = 0; avgNum < average.length; avgNum++) {
-//     if (typeof average[avgNum] == "number") {
-//       avgVar += average[avgNum];
-//     } else if (typeof average[avgNum] == "string") {
-//       avgVar += average[avgNum].length;
-//     } else if (typeof average[avgNum] == "boolean") {
-//       if (average[avgNum] === true) {
-//         avgVar += 1;
-//       } else {
-//         continue;
-//       }
-//     } else {
-//       return `there is a mistake`;
-//     }
-//   }
+  for (let theNum = 0; theNum < nums.length; theNum++) {
+    if (typeof nums[theNum] == "number") {
+      suma += nums[theNum];
+    } else if (typeof nums[theNum] == "string") {
+      suma += nums[theNum].length;
+    } else if (typeof nums[theNum] == "boolean") {
+      if (nums[theNum] === true) {
+        suma += 1;
+      } else {
+        continue;
+      }
+    } else {
+      return `there is a mistake`;
+    }
+  }
+  suma /= nums.length;
+  return suma;
+}
 
-//   avgVar /= average.length;
-//   return avgVar;
-// }
-// console.log(`El resultat de la suma és ` + averageWordLength(mixedArr));
+console.log(`El resultat de la suma és ` + avg(mixedArr));
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -162,7 +162,18 @@ const wordsUnique = [
   "bring",
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(woUniq) {
+  let final = [];
+  for (let i = 0; i < woUniq.length; i++) {
+    if (final.includes(woUniq[i])) {
+      continue;
+    } else {
+      final.push(woUniq[i]);
+    }
+  }
+  console.log(final);
+}
+uniquifyArray(wordsUnique);
 
 // Iteration #6: Find elements
 const wordsFind = [
@@ -176,7 +187,16 @@ const wordsFind = [
   "disobedience",
 ];
 
-function doesWordExist() {}
+function doesWordExist(wordList, daWord) {
+  for (let indexWord = 0; indexWord < wordList.length; indexWord++) {
+    if (daWord === wordList[indexWord]) {
+      return true;
+      break;
+    }
+  }
+}
+let theWord = "aeting";
+//console.log(`${theWord} exist in the array list ` doesWordExist(wordsFind, theWord));
 
 // Iteration #7: Count repetition
 const wordsCount = [
