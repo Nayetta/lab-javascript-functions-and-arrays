@@ -1,15 +1,17 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {
+function maxOfTwoNumbers(num1, num2) {
   if (num1 === num2) {
     return "both numbers are the fu.. same number guy";
-  } else if (num1 < num2) {
-    return `the ${num1} is bigger than ${num2}`;
   } else if (num1 > num2) {
+    return `the ${num1} is bigger than ${num2}`;
+  } else if (num1 < num2) {
     return `the ${num2} is bigger than ${num1}`;
   } else {
     return "these are not numbers";
   }
 }
+
+console.log(maxOfTwoNumbers(2, 3));
 
 // Iteration #2: Find longest word
 const words = [
@@ -93,7 +95,7 @@ function averageNumbers(average) {
   return avg;
 }
 
-console.log(`El resultat de la suma és ` + averageNumbers(numbersAvg));
+console.log(`El resultat de la mitjana és ` + averageNumbers(numbersAvg));
 
 // Level 2: Array of strings
 const wordsArr = [
@@ -188,16 +190,11 @@ const wordsFind = [
 ];
 
 function doesWordExist(wordList, daWord) {
-    if (daWord === wordList.includes) {
-      return true;
-      
-    }else{
-      continue;
-    }
-  }
+  return wordList.includes(daWord);
+}
 
-let theWord = "aeting";
-doesWordExist(wordsFind, theWord);
+let theWord = "matter";
+console.log(doesWordExist(wordsFind, theWord));
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -214,7 +211,20 @@ const wordsCount = [
   "matter",
 ];
 
-function howManyTimes() {}
+function howManyTimes(array, word) {
+  let resultat = 0;
+  for (let index of array) {
+    if (index === word) resultat++;
+  }
+  return resultat;
+}
+
+console.log(
+  `Verificamos si la palabra se repite en base a nuestra busqueda ${howManyTimes(
+    wordsCount,
+    "matter"
+  )} dentro de nuestra busqueda`
+);
 
 // Iteration #8: Bonus
 const matrix = [
